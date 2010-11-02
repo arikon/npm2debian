@@ -1,0 +1,18 @@
+Source: #PACKAGE#
+Section: misc
+Priority: optional
+Maintainer: #USERNAME# <#EMAIL#>
+Build-Depends: nodejs, #BUILD_DEPS#
+Standards-Version: #POLICY#
+
+Package: #PACKAGE#
+Architecture: ${arch}
+Depends: #PACKAGE#${debianNameSuffix}, ${shlibs:Depends}, ${misc:Depends}
+Description: ${shortdesc}
+ ${longdesc}
+
+Package: #PACKAGE#${debianNameSuffix}
+Architecture: ${arch}
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${depends}
+Description: ${shortdesc}
+ ${longdesc}

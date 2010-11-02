@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+PACKAGE_VERSIONED=${debianNameVersioned}
+PACKROOT=./debian/$(PACKAGE_VERSIONED)
+ROOT=$(PACKROOT)/usr/lib/node/
+BINROOT=$(PACKROOT)/usr/bin/
+MANROOT=$(PACKROOT)/usr/share/man/
+
+common-install-prehook-impl::
+	cp debian/dirs.in debian/$(PACKAGE_VERSIONED).dirs
+	cp debian/npmignore.in .npmignore
+
+binary-install/${debianNameVersioned}::
+	npm install --root $(ROOT) --binroot $(BINROOT) --manroot $(MANROOT) .

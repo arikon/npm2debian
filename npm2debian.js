@@ -27,7 +27,7 @@ try {
 }
 
 var commandCache = {};
-[ /*"source", "binary",*/ "help"].forEach(function (c) {
+[ "source", /*"binary", */"help"].forEach(function (c) {
     Object.defineProperty(npm2debian.commands, c, {
         get : function () {
             if (c in commandCache) return commandCache[c];

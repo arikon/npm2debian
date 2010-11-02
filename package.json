@@ -2,7 +2,7 @@
 , "description" : "Utility to convert npm packages to Debian packages"
 , "version" : "0.1.0"
 , "author" : "Sergey Belov <peimei@ya.ru>"
-//, "directories" : { "lib" : "./lib" }
+, "directories" : { "lib" : "./lib" }
 , "bin" : { "npm2debian" : "./cli.js" }
 , "main" : "npm2debian"
 , "engines" : { "node" : ">=0.2.0" }
