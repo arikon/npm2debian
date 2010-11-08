@@ -2,15 +2,24 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
+NPM_PACKAGE=${pkg}
+NPM_VERSION=${ver}
+PACKAGE=${debianName}
 PACKAGE_VERSIONED=${debianNameVersioned}
-PACKROOT=./debian/$(PACKAGE_VERSIONED)
-ROOT=$(PACKROOT)/usr/lib/node/
-BINROOT=$(PACKROOT)/usr/bin/
-MANROOT=$(PACKROOT)/usr/share/man/
+ROOT_VERSIONED=./debian/$(PACKAGE_VERSIONED)
+BINROOT=$(ROOT_VERSIONED)/usr/bin/
+LIBROOT=$(ROOT_VERSIONED)/usr/lib/node/
+MANROOT=$(ROOT_VERSIONED)/usr/share/man/
 
 common-install-prehook-impl::
 	cp debian/dirs.in debian/$(PACKAGE_VERSIONED).dirs
 	cp debian/npmignore.in .npmignore
 
 binary-install/${debianNameVersioned}::
-	npm install --root $(ROOT) --binroot $(BINROOT) --manroot $(MANROOT) .
+	npm install --root $(LIBROOT) --binroot $(BINROOT) --manroot $(MANROOT) .
+	
+	# delete symlinks
+	rm -f $(LIBROOT)/$(NPM_PACKAGE) $(LIBROOT)/.npm/$(NPM_PACKAGE)/active
+	# move symlinks
+	find $(BINROOT) ! -name '*@*' -a -type l -exec mv '{}' ./debian/$(PACKAGE)/usr/bin \;
+
