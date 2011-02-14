@@ -73,6 +73,7 @@ else {
     ini.resolveConfigs(conf, function (er) {
         if (er) return errorHandler(er);
         npm.config.set('root', ini.get('root'));
+        npm.config.set('cwd', process.cwd());
         npm2debian.commands[command](arglist, errorHandler);
     })
 }
