@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-var log = require('npm/utils/log');
+var log = require('npm/lib/utils/log');
 log.waitForConfig();
 
-var fs = require('npm/utils/graceful-fs'),
+var fs = require('npm/lib/utils/graceful-fs'),
     path = require('path'),
     sys = require('sys'),
-    npm = require('npm/../npm'),
-    ini = require('npm/utils/ini'),
-    rm = require('npm/utils/rm-rf'),
+    npm = require('npm'),
+    ini = require('npm/lib/utils/ini'),
+    rm = require('npm/lib/utils/rm-rf'),
     npm2debian = require('./npm2debian'),
 
     // supported commands.

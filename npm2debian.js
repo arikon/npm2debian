@@ -5,8 +5,8 @@ var npm2debian = exports,
     //set = require("npm/utils/set"),
     //get = require("npm/utils/get"),
     //ini = require("npm/utils/ini"),
-    log = require("npm/utils/log"),
-    fs = require("npm/utils/graceful-fs"),
+    log = require("npm/lib/utils/log"),
+    fs = require("npm/lib/utils/graceful-fs"),
     path = require("path");
 
 npm2debian.commands = {};
