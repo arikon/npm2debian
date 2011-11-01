@@ -1,2 +1,1 @@
-usr/lib/node/${pkg}@${ver}          usr/lib/node/${pkg}
-usr/lib/node/.npm/${pkg}/${ver}     usr/lib/node/.npm/${pkg}/active
+usr/lib/node/${pkg}/${ver}          usr/lib/node_modules/${pkg}

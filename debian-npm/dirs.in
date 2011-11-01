@@ -1,3 +1,1 @@
-usr/bin
-usr/lib/node
-usr/share/man
+usr/lib/node/${pkg}
