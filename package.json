@@ -1,9 +1,25 @@
-{ "name" : "npm2debian"
-, "description" : "Utility to convert npm packages to Debian packages"
-, "version" : "0.1.0"
-, "author" : "Sergey Belov <peimei@ya.ru>"
-, "directories" : { "lib" : "./lib" }
-, "bin" : { "npm2debian" : "./cli.js" }
-, "main" : "npm2debian"
-, "engines" : { "node" : ">=0.2.0" }
+{
+    "name": "npm2debian",
+    "description": "Utility to convert npm packages to Debian packages",
+    "version": "0.2.0",
+    "author": {
+        "name": "Sergey Belov",
+        "email": "peimei@ya.ru",
+        "url": "http://github.com/arikon"
+    },
+    "directories": {
+        "lib": "./lib"
+    },
+    "bin": {
+        "npm2debian": "./bin/npm2debian"
+    },
+    "dependencies": {
+        "coa": "0.2",
+        "npm": "1.0",
+        "q": "0.7",
+        "qq": "0.3"
+    },
+    "engines": {
+        "node": ">=0.2.0"
+    }
 }
