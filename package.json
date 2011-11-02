@@ -20,9 +20,10 @@
         "qq": "0.3",
         "q-fs": "0.1",
         "rimraf": "1",
-        "semver": "1"
+        "semver": "https://github.com/arikon/node-semver/zipball/master"
     },
+    "bundledDependencies": [ "semver" ],
     "engines": {
-        "node": ">=0.2.0"
+        "node": ">=0.4.0 <=0.7.0"
     }
 }
