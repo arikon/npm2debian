@@ -2,7 +2,7 @@ Source: #PACKAGE#
 Section: misc
 Priority: optional
 Maintainer: #USERNAME# <#EMAIL#>
-Build-Depends: nodejs, #BUILD_DEPS#
+Build-Depends: nodejs, ${buildDepends}, #BUILD_DEPS#
 Standards-Version: #POLICY#
 
 Package: #PACKAGE#
