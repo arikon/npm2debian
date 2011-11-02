@@ -19,5 +19,5 @@ binary-install/${debianNameVersioned}::
 	npm install --global --prefix $(NODE_PREFIX) .
 	
 	# move module
-	mv $(NODE_PREFIX)/lib/node_modules/$(NPM_PACKAGE) $(NODE_PREFIX_VERSIONED)/lib/node/$(NPM_PACKAGE)/$(NPM_VERSION)
+	mv $(NODE_PREFIX)/lib/node_modules/$(NPM_PACKAGE) $(NODE_PREFIX_VERSIONED)/lib/node/$(NPM_PACKAGE)@$(NPM_VERSION)
 
