@@ -16,7 +16,7 @@
     "qq": "0.3",
     "q-fs": "0.1",
     "rimraf": "1",
-    "semver": "https://github.com/arikon/node-semver/zipball/master"
+    "semver": "https://github.com/arikon/node-semver/tarball/master"
   },
   "engines": {
     "node": ">=0.4.0 <=0.7.0"
