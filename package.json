@@ -13,7 +13,7 @@
     "coa": "0.2",
     "npm": "1.0",
     "q": "0.7",
-    "qq": "0.3",
+    "qq": "0.3.3",
     "q-fs": "0.1",
     "rimraf": "1",
     "semver": "https://github.com/arikon/node-semver/tarball/master"
