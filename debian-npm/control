@@ -7,7 +7,7 @@ Standards-Version: #POLICY#
 
 Package: #PACKAGE#
 Architecture: ${arch}
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${depends}, ${shlibs:Depends}, ${misc:Depends}
 XB-Conductor-Package: #PACKAGE#
 Description: ${shortdesc}
  ${longdesc}

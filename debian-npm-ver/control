@@ -14,7 +14,7 @@ Description: ${shortdesc}
 
 Package: #PACKAGE#${debianNameSuffix}
 Architecture: ${arch}
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${depends}
+Depends: ${depends}, ${shlibs:Depends}, ${misc:Depends}
 XB-Conductor-Package: #PACKAGE#-
 Description: ${shortdesc}
  ${longdesc}
