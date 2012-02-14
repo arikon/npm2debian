@@ -1,13 +1,27 @@
 #!/usr/bin/make -f
 
-include /usr/share/cdbs/1/rules/debhelper.mk
+NODE_PREFIX=debian/${debianName}/usr
 
-PACKAGE=${debianName}
-ROOT=./debian/$(PACKAGE)
-NODE_PREFIX=$(ROOT)/usr
+%:
+	dh $@
 
-common-install-prehook-impl::
-	cp debian/npmignore.in .npmignore
+build:
+	dh build --before dh_auto_build
+	npm build
+	npm install --dev
+	npm test
+	dh build --after dh_auto_test
 
-binary-install/${debianName}::
+install:
+	dh install --before dh_auto_install
+	dh install --after dh_auto_install
+	dh install --before install
 	npm install --global --prefix $(NODE_PREFIX) .
+	dh install --after install
+
+binary: install
+	dh binary
+
+clean:
+	${cleanCmd}
+	dh clean

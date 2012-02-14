@@ -8,6 +8,5 @@ Standards-Version: #POLICY#
 Package: #PACKAGE#
 Architecture: ${arch}
 Depends: ${depends}, ${shlibs:Depends}, ${misc:Depends}
-XB-Conductor-Package: #PACKAGE#
 Description: ${shortdesc}
  ${longdesc}
