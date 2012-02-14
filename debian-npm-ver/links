@@ -1,0 +1,2 @@
+usr/lib/node/${pkg}@${ver}          usr/lib/node_modules/${pkg}
+usr/lib/node/${pkg}@${ver}          usr/lib/node/${pkg}

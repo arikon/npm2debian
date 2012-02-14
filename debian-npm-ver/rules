@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+NPM_PACKAGE=${pkg}
+NPM_VERSION=${ver}
+PACKAGE=${debianName}
+PACKAGE_VERSIONED=${debianNameVersioned}
+ROOT=./debian/$(PACKAGE)
+ROOT_VERSIONED=./debian/$(PACKAGE_VERSIONED)
+NODE_PREFIX=$(ROOT)/usr
+NODE_PREFIX_VERSIONED=$(ROOT_VERSIONED)/usr
+
+common-install-prehook-impl::
+	cp debian/dirs.in debian/$(PACKAGE_VERSIONED).dirs
+	cp debian/npmignore.in .npmignore
+
+binary-install/${debianNameVersioned}::
+	npm install --global --prefix $(NODE_PREFIX) .
+	
+	# move module
+	mv $(NODE_PREFIX)/lib/node_modules/$(NPM_PACKAGE) $(NODE_PREFIX_VERSIONED)/lib/node/$(NPM_PACKAGE)@$(NPM_VERSION)
+
