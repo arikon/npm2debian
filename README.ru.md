@@ -32,11 +32,11 @@
 
   Для работы инструмента необходимы следующие Debian пакеты:
 
-	`sudo apt-get install devscripts dh-make`
+	sudo apt-get install devscripts dh-make
 
   Для сборки сконвертированных пакетов установите следующие Debian пакеты:
 
-	`sudo apt-get install debhelper fakeroot dpkg-dev`
+	sudo apt-get install debhelper fakeroot dpkg-dev
 
 ## Установка
 
