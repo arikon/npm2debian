@@ -30,11 +30,13 @@
 	EMAIL="Адрес электронной почты"
 	DEBFULLNAME="Имя и Фамилия сопровождающего пакет"
 
-  Для работы инструмента необходимо установить следующие Debian пакеты
+  Для работы инструмента необходимы следующие Debian пакеты:
 
-	debhelper, fakeroot, devscripts, dpkg-dev, git
+	`sudo apt-get install devscripts dh-make`
 
-  Установленный интерпретатор nodejs (>=0.4.0 <=0.7.0), и утилита для управления пакетами npm (>=1.1.0)
+  Для сборки сконвертированных пакетов установите следующие Debian пакеты:
+
+	`sudo apt-get install debhelper fakeroot dpkg-dev`
 
 ## Установка
 
@@ -42,36 +44,44 @@
 
  * В систему вы можете установить утилиту глобально в виде пакета npm
 
-		npm -g install npm2debian 
+	`npm -g install npm2debian`
 
  * Локально для вашего пользователя
 
-		npm install npm2debian
+	`npm install npm2debian`
 
  * Или получить github версию из удаленного репозитория
-  
-		git clone https://github.com/arikon/npm2debian
 
-	  затем перейти в рабочий каталог утилиты
+	`git clone https://github.com/arikon/npm2debian`
 
-		cd npm2debian
+	затем перейти в рабочий каталог утилиты
 
-	  и установить необходимые зависимости для работы 
+	`cd npm2debian`
 
-		npm install
+	и установить необходимые зависимости для работы 
+
+	`npm install`
 
 ## Примеры использования
   
- * Конвертирование пакета bem (по умолчанию npm пакет конвертируется без указания версии для Debian пакета)
+ * Конвертирование пакета `bem`:
 
-		npm2deb bem
+	`npm2debian bem`
 
- * Для конвертирования пакета с указанием версии, указываем опцию --versioned
+	В результате в директории `bem-<version>` будет создан сорцовый пакет для сборки одного бинарного пакета `npm-bem`.
 
-		npm2deb --versioned bem
+ * Для конвертирования пакета с указанием версии, нужно указать опцию `--versioned`
+
+	`npm2debian --versioned bem`
+
+	В результате в директории `bem-<version>` будет создан сорцовый пакет для сборки двух бинарных пакетов
+
+	 * `npm-bem`
+	 * `npm-bem-<dashed-version>`, где `<dashed-version>`, это версия, где вместо точек используются дефисы
 
  * Сборка конвертированного Debian пакета
 
-		cd npm-bem*
-		dpkg-buildpackage -rfakeroot -b -uc -us
-    
+	```
+	cd npm-bem*
+	dpkg-buildpackage -rfakeroot
+	```
