@@ -10,17 +10,16 @@
 	-h, --help                     : показать подсказку для опций
 	-o OUTPUT, --output=OUTPUT     : изменить директорию с результатом
 	--versioned                    : подготовить Debian пакет с указанием версии
-	--no-package-prefix            : не укзаывать префикс для Debian пакетов
+	--no-package-prefix            : не указывать префикс для Debian пакетов
 	-m MAINTAINER,
 	--maintainer=MAINTAINER        : указать имя сопровождающего Debian пакет
-	-e EMAIL, --email=EMAIL        : указать e-mail сопровождающего Debian пакет
+	-e EMAIL, --email=EMAIL        : указать email сопровождающего Debian пакет
 	-p PACKAGEPREFIX,
 	--package-prefix=PACKAGEPREFIX : указать Debian префикс для имени пакета
 	-u DEBVERSION,
 	--debian-version=DEBVERSION    : указать Debian версию для пакета
 	-b DEBBUILD,
 	--debian-build=DEBBUILD        : указать Debian package build
-	--local                        : использовать собственные утилиты dh_make и debchange
 	-v, --version                  : показать версию инструмента
 
 ## Окружение 
@@ -46,21 +45,17 @@
 
 	`npm -g install npm2debian`
 
- * Локально для вашего пользователя
+ * Локальная установка
 
 	`npm install npm2debian`
 
- * Или получить github версию из удаленного репозитория
+ * Установка из исходников
 
-	`git clone https://github.com/arikon/npm2debian`
-
-	затем перейти в рабочий каталог утилиты
-
-	`cd npm2debian`
-
-	и установить необходимые зависимости для работы 
-
-	`npm install`
+	```
+	git clone https://github.com/arikon/npm2debian
+	cd npm2debian
+	npm install
+	```
 
 ## Примеры использования
   
@@ -68,18 +63,18 @@
 
 	`npm2debian bem`
 
-	В результате в директории `bem-<version>` будет создан сорцовый пакет для сборки одного бинарного пакета `npm-bem`.
+	В результате в директории `npm-bem-<version>` будет создан сорцовый пакет для сборки одного бинарного пакета `npm-bem`.
 
- * Для конвертирования пакета с указанием версии, нужно указать опцию `--versioned`
+ * Для создания пакета с версией в имени нужно указать опцию `--versioned`:
 
 	`npm2debian --versioned bem`
 
-	В результате в директории `bem-<version>` будет создан сорцовый пакет для сборки двух бинарных пакетов
+	В результате в директории `npm-bem-<version>` будет создан сорцовый пакет для сборки двух бинарных пакетов:
 
 	 * `npm-bem`
 	 * `npm-bem-<dashed-version>`, где `<dashed-version>`, это версия, где вместо точек используются дефисы
 
- * Сборка конвертированного Debian пакета
+ * Сборка конвертированного Debian пакета:
 
 	```
 	cd npm-bem*
