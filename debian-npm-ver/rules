@@ -12,27 +12,18 @@ NODE_PREFIX_VERSIONED=$(ROOT_VERSIONED)/usr
 %:
 	dh $@
 
-build:
+override_dh_auto_build:
 	cp debian/dirs.in debian/$(PACKAGE_VERSIONED).dirs
-	dh build --before dh_auto_build
 	npm build
 	npm install --dev
-	npm test
-	dh build --after dh_auto_test
 
-install:
-	dh install --before dh_auto_install
-	dh install --after dh_auto_install
-	dh install --before install
+override_dh_auto_test:
+	npm test
+
+override_dh_auto_install:
 	npm install --global --prefix $(NODE_PREFIX) .
 	# move module
 	mv $(NODE_PREFIX)/lib/node_modules/$(NPM_PACKAGE) $(NODE_PREFIX_VERSIONED)/lib/node/$(NPM_PACKAGE)@$(NPM_VERSION)
-	# fix removed by `npm install` links
-	dh_link
-	dh install --after install
-
-binary: install
-	dh binary
 
 clean:
 	-rm -f debian/$(PACKAGE)-*.dirs
