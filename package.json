@@ -10,10 +10,9 @@
     "npm2debian": "./bin/npm2debian"
   },
   "dependencies": {
-    "coa": "0.2",
+    "coa": "0.3",
     "npm": "1.0",
-    "q": "0.7",
-    "qq": "0.3.3",
+    "qq": "0.3",
     "q-fs": "0.1",
     "rimraf": "1",
     "semver": "~1.0.13"
