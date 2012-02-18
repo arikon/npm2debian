@@ -1,6 +1,8 @@
 # npm2debian
 **npm2debian** is a command line tool to convert packages from npmjs.org repository to Debian packages.
 
+Contributions are welcome, we have [some tasks](/arikon/npm2debian/issues) to do.
+
 ## Overview
 
 	npm2debian [options] <package>
