@@ -1,7 +1,7 @@
 {
   "name": "npm2debian",
   "description": "Utility to convert npm packages to Debian packages",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "author": "Sergey Belov <peimei@ya.ru> (http://github.com/arikon)",
   "directories": {
     "lib": "./lib"
@@ -21,5 +21,6 @@
   "engines": {
     "node": ">=0.4.0 <=0.7.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "optionalDependencies": {}
 }
