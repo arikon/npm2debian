@@ -9,6 +9,13 @@
   "bin": {
     "npm2debian": "./bin/npm2debian"
   },
+  "npm2debian": {
+    "bash-completion": {
+      "npm2debian": {
+        "script": "./bin/npm2debian completion"
+      }
+    }
+  },
   "dependencies": {
     "coa": "~0.4.0",
     "npm": "~1.3.15",
