@@ -16,6 +16,10 @@
       }
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/arikon/npm2debian.git"
+  },
   "dependencies": {
     "coa": "~0.4.0",
     "npm": "~1.3.15",
