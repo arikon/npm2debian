@@ -22,6 +22,7 @@ Contributions are welcome, we have [some tasks](https://github.com/arikon/npm2de
 	--debian-version=DEBVERSION    : Debian package version
 	-b DEBBUILD,
 	--debian-build=DEBBUILD        : Debian package build
+	--registry=REGISTRY            : Registry for npm install
 	-v, --version                  : Show version
 
 ## Environment

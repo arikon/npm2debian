@@ -20,6 +20,7 @@
 	--debian-version=DEBVERSION    : указать Debian версию для пакета
 	-b DEBBUILD,
 	--debian-build=DEBBUILD        : указать Debian package build
+	--registry=REGISTRY            : указать registry для npm install
 	-v, --version                  : показать версию инструмента
 
 ## Окружение 
